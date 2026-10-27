@@ -1453,3 +1453,364 @@ ul, ol { list-style: none; }
   .hero-image-wrap:hover img { transform: none !important; }
 }
 
+/* ==========================================================================
+   Responsive Adjustments — Mobile & Tablet
+   ========================================================================== */
+
+/* Top bar — single line on small screens */
+@media (max-width: 767px) {
+  .top-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 24px;
+  }
+}
+
+/* Hero section mobile */
+@media (max-width: 1023px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-content {
+    order: 1;
+  }
+
+  .hero-showcase {
+    order: 2;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.15;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: none;
+  }
+
+  .hero-urdu {
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .btn-lg {
+    min-height: 48px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .hero-trust-list {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 16px;
+  }
+
+  .hero-section {
+    padding: 40px 0 60px 0;
+  }
+
+  .hero-image-wrap {
+    border-radius: var(--radius-md);
+  }
+
+  .hotspot-overlay {
+    display: none !important;
+  }
+
+  .mobile-hotspots {
+    display: flex !important;
+  }
+}
+
+/* Category tabs horizontal scroll on mobile */
+@media (max-width: 767px) {
+  .category-tabs {
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    margin-bottom: 24px;
+  }
+
+  .category-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-tab {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 9px 16px;
+    font-size: 0.85rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-content {
+    padding: 18px;
+  }
+
+  .product-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Two-column products on small tablets */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Why section mobile stack */
+@media (max-width: 991px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .solution-card {
+    flex-direction: column;
+  }
+
+  .solution-image {
+    aspect-ratio: 4 / 3;
+    height: auto;
+    min-height: 220px;
+  }
+
+  .solution-body {
+    padding: 24px;
+  }
+}
+
+/* Steps section mobile */
+@media (max-width: 767px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .step-card {
+    padding: 24px;
+  }
+
+  .step-number {
+    font-size: 2rem;
+  }
+}
+
+/* Testimonials mobile */
+@media (max-width: 991px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-card {
+    padding: 24px;
+  }
+}
+
+/* Stats mobile */
+@media (max-width: 991px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+  }
+
+  .stat-item {
+    padding: 26px 16px;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+}
+
+/* FAQ mobile */
+@media (max-width: 767px) {
+  .faq-wrapper {
+    margin-top: 26px;
+  }
+
+  .faq-question-btn {
+    padding: 16px 0;
+    font-size: 1rem;
+  }
+
+  .faq-answer-inner {
+    font-size: 0.925rem;
+    padding-bottom: 18px;
+  }
+}
+
+/* CTA section mobile */
+@media (max-width: 767px) {
+  .section-cta {
+    padding: 56px 0;
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+    line-height: 1.25;
+  }
+
+  .cta-desc {
+    font-size: 1rem;
+    margin-bottom: 22px;
+  }
+
+  .cta-location {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .cta-location svg {
+    margin-top: 0;
+  }
+}
+
+/* Footer mobile */
+@media (max-width: 639px) {
+  .footer-main {
+    padding: 48px 0 32px 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+  }
+
+  .footer-link,
+  .footer-contact-item {
+    font-size: 0.825rem;
+  }
+
+  .footer-contact-item {
+    gap: 8px;
+  }
+
+  .footer-contact-item svg {
+    margin-top: 2px;
+  }
+
+  .footer-bottom {
+    padding: 16px 0;
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom-inner {
+    gap: 6px;
+  }
+}
+
+/* Section padding mobile */
+@media (max-width: 767px) {
+  .section-products {
+    padding: 56px 0 72px 0;
+  }
+
+  .section-why,
+  .section-steps,
+  .section-testimonials,
+  .section-faq {
+    padding: 56px 0;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .section-desc {
+    font-size: 0.975rem;
+  }
+}
+
+/* Floating WhatsApp vs mobile dock spacing */
+@media (max-width: 640px) {
+  .floating-whatsapp {
+    bottom: 100px;
+    right: 16px;
+    padding: 11px;
+    border-radius: 50%;
+  }
+
+  .floating-whatsapp span {
+    display: none;
+  }
+
+  .mobile-action-dock {
+    bottom: 0;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .scroll-top-btn {
+    bottom: 100px;
+    left: 16px;
+  }
+}
+
+/* Header compact on mobile */
+@media (max-width: 991px) {
+  .nav-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.68rem;
+  }
+
+  .header-actions .btn-sm {
+    min-height: 36px;
+    padding: 5px 10px;
+    font-size: 0.825rem;
+  }
+}
+
+/* Small phones — reduce container padding */
+@media (max-width: 479px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .cta-title {
+    font-size: 1.6rem;
+  }
+}
+
