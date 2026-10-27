@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jan Industries — Developer Documentation</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 2cm 2cm 2cm 2cm;
+      @bottom-center {
+        content: "Jan Industries — Developer Documentation — Page " counter(page) " of " counter(pages);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 8pt;
+        color: #64748b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      font-size: 10.5pt;
+      margin: 0;
+      padding: 0;
+    }
+    .cover {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 60px 40px;
+      text-align: center;
+      border-bottom: 4px solid #d97706;
+    }
+    .cover h1 { font-size: 32pt; margin: 0 0 12px 0; font-weight: 800; letter-spacing: -0.5px; }
+    .cover h2 { font-size: 16pt; margin: 0 0 24px 0; font-weight: 400; color: #cbd5e1; }
+    .cover .meta { margin-top: 40px; font-size: 11pt; color: #94a3b8; }
+    .cover .meta p { margin: 4px 0; }
+    .toc {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 24px;
+      margin: 30px 0;
+    }
+    .toc h2 { font-size: 14pt; margin-top: 0; color: #0f172a; border-bottom: 2px solid #d97706; padding-bottom: 8px; }
+    .toc ul { list-style: none; padding: 0; margin: 16px 0 0 0; }
+    .toc li { margin: 8px 0; font-size: 11pt; }
+    .toc li::before { content: "▹"; color: #d97706; font-weight: bold; margin-right: 8px; }
+    h2 {
+      font-size: 15pt;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 30px;
+      margin-bottom: 16px;
+    }
+    h3 { font-size: 12pt; color: #334155; margin-top: 20px; margin-bottom: 8px; }
+    h4 { font-size: 10.5pt; color: #475569; margin-top: 16px; margin-bottom: 4px; }
+    p { margin: 8px 0; }
+    ul, ol { margin: 8px 0 8px 20px; }
+    li { margin: 4px 0; }
+    code {
+      font-family: "Consolas", "Monaco", monospace;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-size: 9pt;
+      color: #0f172a;
+    }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 12px 0;
+      font-size: 8.5pt;
+      line-height: 1.5;
+    }
+    pre code { background: none; border: none; padding: 0; color: inherit; font-size: inherit; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 9pt;
+    }
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 8px 10px;
+      text-align: left;
+    }
+    th { background: #f1f5f9; color: #0f172a; font-weight: 700; }
+    tr:nth-child(even) { background: #f8fafc; }
+    .callout {
+      background: #fef3c7;
+      border-left: 4px solid #d97706;
+      padding: 12px 16px;
+      margin: 14px 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .callout-info {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+    }
+    .callout-warning {
+      background: #fef2f2;
+      border-left: 4px solid #ef4444;
+    }
+    .badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .section-break { page-break-before: always; }
+    .small { font-size: 8.5pt; color: #64748b; }
+    .footer-note { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 8.5pt; color: #64748b; }
+  </style>
+</head>
+<body>
+
+  <!-- ================= COVER ================= -->
+  <div class="cover">
+    <h1>Jan Industries</h1>
+    <h2>Developer Documentation</h2>
+    <div class="meta">
+      <p><strong>Project:</strong> Milking Machines &amp; Genuine Spare Parts Website</p>
+      <p><strong>Location:</strong> GT Road, Lahore, Pakistan</p>
+      <p><strong>Stack:</strong> HTML5 · CSS3 · Vanilla JavaScript (Zero Dependencies)</p>
+      <p><strong>Version:</strong> 2.0 — Minimal &amp; Animated Redesign</p>
+      <p><strong>Date:</strong> October 2026</p>
+      <p><strong>Author:</strong> Frontend Engineering</p>
+    </div>
+  </div>
+
+  <!-- ================= TABLE OF CONTENTS ================= -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li>1. Project Overview</li>
+      <li>2. File Structure</li>
+      <li>3. Design System</li>
+      <li>4. Color Palette</li>
+      <li>5. Typography</li>
+      <li>6. Spacing &amp; Border Radius</li>
+      <li>7. Component Documentation</li>
+      <li>8. JavaScript Modules</li>
+      <li>9. Responsive Breakpoints</li>
+      <li>10. Animation System</li>
+      <li>11. Accessibility (a11y)</li>
+      <li>12. SEO &amp; Meta</li>
+      <li>13. Deployment Guide</li>
+      <li>14. Maintenance &amp; Updates</li>
+      <li>15. Browser Support</li>
+    </ul>
+  </div>
+
+  <!-- ================= 1. OVERVIEW ================= -->
+  <h2>1. Project Overview</h2>
+  <p>Jan Industries is a dairy-equipment manufacturer and spare-parts supplier based on GT Road, Lahore, Pakistan. The website serves as a digital catalog for milking machines and genuine replacement parts, with direct WhatsApp ordering integration for farmers across Pakistan.</p>
+  <div class="callout callout-info">
+    <strong>Design Philosophy:</strong> Industrial-minimal. Crisp 1px borders, real shadows, warm off-white background, slate typography, and amber accent. Intentionally avoids AI-template aesthetics — no glassmorphism, no generic gradients, no over-rounded pills.
+  </div>
+  <p><strong>Key Features:</strong></p>
+  <ul>
+    <li>Hero section with interactive product hotspots</li>
+    <li>Animated scroll-reveal on all sections</li>
+    <li>Count-up statistics counter</li>
+    <li>Product category filtering (machines, pumps, liners, cleaning)</li>
+    <li>FAQ accordion</li>
+    <li>Testimonial carousel grid</li>
+    <li>Floating WhatsApp action button</li>
+    <li>Mobile bottom action dock</li>
+    <li>Sticky header with scroll effects</li>
+    <li>Urdu language support in hero section</li>
+  </ul>
+
+  <!-- ================= 2. FILE STRUCTURE ================= -->
+  <h2>2. File Structure</h2>
+  <pre><code>Jan Industries/
+├── index.html              # Main HTML document
+├── style.css               # All styles (design system + components)
+├── script.js               # All JavaScript modules
+├── favicon.svg             # Site favicon / brand mark
+├── Developer_Documentation.html  # This document
+└── images/
+    ├── single-bucket.jpg
+    ├── double-bucket.jpg
+    ├── pulsator.jpg
+    ├── vacuum-pump.jpg
+    ├── liners.jpg
+    ├── hoses.jpg
+    ├── teat-cups.jpg
+    ├── cleaning.jpg
+    └── workshop.jpg</code></pre>
+  <table>
+    <tr><th>File</th><th>Purpose</th><th>Size Role</th></tr>
+    <tr><td><code>index.html</code></td><td>Semantic HTML5 markup, Schema.org LD+JSON, Open Graph meta</td><td>Structure</td></tr>
+    <tr><td><code>style.css</code></td><td>Design system tokens, component styles, responsive media queries, animations</td><td>Presentation</td></tr>
+    <tr><td><code>script.js</code></td><td>Seven vanilla JS modules: scroll effects, mobile menu, catalog filter, hotspots, stats counter, FAQ accordion, scroll reveal</td><td>Behavior</td></tr>
+    <tr><td><code>favicon.svg</code></td><td>Brand favicon used in browser tab and header logo</td><td>Asset</td></tr>
+    <tr><td><code>images/</code></td><td>Product photography (JPEG, optimized for web)</td><td>Media</td></tr>
+  </table>
+
+  <!-- ================= 3. DESIGN SYSTEM ================= -->
+  <h2>3. Design System</h2>
+  <p>All design decisions are centralized in CSS custom properties (<code>:root</code>) in <code>style.css</code>. Changing a token updates the entire site consistently.</p>
+
+  <h3>3.1 Design Tokens</h3>
+  <table>
+    <tr><th>Token</th><th>Value</th><th>Usage</th></tr>
+    <tr><td><code>--color-bg</code></td><td><code>#fafaf9</code></td><td>Page background</td></tr>
+    <tr><td><code>--color-bg-alt</code></td><td><code>#f5f5f4</code></td><td>Alternative section background</td></tr>
+    <tr><td><code>--color-ink</code></td><td><code>#0f172a</code></td><td>Primary text / headings</td></tr>
+    <tr><td><code>--color-ink-soft</code></td><td><code>#334155</code></td><td>Secondary text</td></tr>
+    <tr><td><code>--color-muted</code></td><td><code>#64748b</code></td><td>Muted / helper text</td></tr>
+    <tr><td><code>--color-line</code></td><td><code>#e2e8f0</code></td><td>Borders and dividers</td></tr>
+    <tr><td><code>--color-accent</code></td><td><code>#d97706</code></td><td>Primary accent (amber/gold)</td></tr>
+    <tr><td><code>--color-accent-deep</code></td><td><code>#b45309</code></td><td>Accent hover state</td></tr>
+    <tr><td><code>--color-accent-soft</code></td><td><code>rgba(217,119,6,0.12)</code></td><td>Accent background tints</td></tr>
+    <tr><td><code>--color-card</code></td><td><code>#ffffff</code></td><td>Card backgrounds</td></tr>
+    <tr><td><code>--color-whatsapp</code></td><td><code>#25d366</code></td><td>WhatsApp CTA buttons</td></tr>
+    <tr><td><code>--shadow-card</code></td><td><code>0 1px 3px ... 0 8px 24px</code></td><td>Card elevation</td></tr>
+    <tr><td><code>--shadow-lift</code></td><td><code>0 12px 30px ...</code></td><td>Hover lift shadow</td></tr>
+    <tr><td><code>--radius-md</code></td><td><code>10px</code></td><td>Standard component rounding</td></tr>
+    <tr><td><code>--radius-lg</td></td><td><code>14px</code></td><td>Large card / image rounding</td></tr>
+    <tr><td><code>--transition-normal</code></td><td><code>300ms cubic-bezier(0.4, 0, 0.2, 1)</code></td><td>Standard transition</td></tr>
+    <tr><td><code>--transition-spring</code></td><td><code>450ms cubic-bezier(0.23, 1, 0.32, 1)</code></td><td>Spring-style transitions</td></tr>
+  </table>
+
+  <!-- ================= 4. COLORS ================= -->
+  <h2>4. Color Palette</h2>
+  <table>
+    <tr><th>Name</th><th>Hex</th><th>Role</th></tr>
+    <tr><td>Slate / Ink</td><td><code>#0f172a</code></td><td>Headings, primary text, header links</td></tr>
+    <tr><td>Slate Soft</td><td><code>#334155</code></td><td>Body copy, nav links</td></tr>
+    <tr><td>Muted</td><td><code>#64748b</code></td><td>Captions, metadata, footnotes</td></tr>
+    <tr><td>Line</td><td><code>#e2e8f0</code></td><td>Borders, rules, input borders</td></tr>
+    <tr><td>Amber (Accent)</td><td><code>#d97706</code></td><td>Primary CTAs, badges, active states</td></tr>
+    <tr><td>Amber Deep</td><td><code>#b45309</code></td><td>Hover and active states</td></tr>
+    <tr><td>Card White</td><td><code>#ffffff</code></td><td>Cards, modals, dropdowns</td></tr>
+    <tr><td>WhatsApp Green</td><td><code>#25d366</code></td><td>WhatsApp buttons and links</td></tr>
+    <tr><td>Paper / Background</td><td><code>#fafaf9</code></td><td>Main page background</td></tr>
+    <tr><td>Paper Alt</td><td><code>#f5f5f4</code></td><td>Alternating section backgrounds</td></tr>
+  </table>
+
+  <!-- ================= 5. TYPOGRAPHY ================= -->
+  <h2>5. Typography</h2>
+  <table>
+    <tr><th>Font</th><th>Weights</th><th>Usage</th></tr>
+    <tr><td>Inter</td><td>400, 500, 600</td><td>Body text, UI copy, buttons</td></tr>
+    <tr><td>Montserrat</td><td>600, 700, 800</td><td>Headings, display text, section titles</td></tr>
+    <tr><td>Noto Nastaliq Urdu</td><td>500, 700</td><td>Urdu language content (hero section)</td></tr>
+  </table>
+  <p><strong>Font Stack:</strong></p>
+  <pre><code>--font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+--font-display: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+--font-urdu: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", "Urdu Typesetting", "Arial", sans-serif;</code></pre>
+  <p>All fonts are loaded from Google Fonts with <code>preconnect</code> resource hints for performance.</p>
+
+  <!-- ================= 6. SPACING ================= -->
+  <h2>6. Spacing &amp; Border Radius</h2>
+  <table>
+    <tr><th>Token</th><th>Value</th><th>Usage</th></tr>
+    <tr><td><code>--radius-sm</code></td><td><code>6px</code></td><td>Badges, small pills</td></tr>
+    <tr><td><code>--radius-md</code></td><td><code>10px</code></td><td>Buttons, inputs, cards</td></tr>
+    <tr><td><code>--radius-lg</code></td><td><code>14px</code></td><td>Large cards, hero images, modals</td></tr>
+    <tr><td>Container max-width</td><td><code>1200px</code></td><td>Content width constraint</td></tr>
+    <tr><td>Container padding</td><td><code>24px</code> (sides)</td><td>All major sections</td></tr>
+    <tr><td>Section vertical padding</td><td><code>72px–96px</code></td><td>Desktop section spacing</td></tr>
+    <tr><td>Mobile section padding</td><td><code>56px–72px</code></td><td>Mobile section spacing</td></tr>
+  </table>
+
+  <!-- ================= 7. COMPONENTS ================= -->
+  <h2>7. Component Documentation</h2>
+
+  <h3>7.1 Buttons (<code>.btn</code>)</h3>
+  <table>
+    <tr><th>Class</th><th>Appearance</th><th>Use Case</th></tr>
+    <tr><td><code>.btn-amber</code></td><td>Amber fill, white text</td><td>Primary CTAs (WhatsApp, Order)</td></tr>
+    <tr><td><code>.btn-navy</code></td><td>Slate fill, white text</td><td>Secondary primary actions</td></tr>
+    <tr><td><code>.btn-ghost</code></td><td>White fill, slate text, 1px border</td><td>Tertiary actions (Call)</td></tr>
+    <tr><td><code>.btn-whatsapp-solid</code></td><td>WhatsApp green fill</td><td>Mobile dock WhatsApp button</td></tr>
+    <tr><td><code>.btn-sm</code></td><td>38px height, small text</td><td>Header actions</td></tr>
+    <tr><td><code>.btn-lg</code></td><td>52px height, full-width on mobile</td><td>Hero and CTA sections</td></tr>
+  </table>
+  <p>All buttons include: hover lift (<code>translateY(-2px)</code>), active scale (<code>0.97</code>), focus-visible outline, and disabled reduced-motion support.</p>
+
+  <h3>7.2 Badges (<code>.badge</code>)</h3>
+  <table>
+    <tr><th>Class</th><th>Meaning</th></tr>
+    <tr><td><code>.badge-in-stock</code></td><td>Green-tinted, "In Stock" status on product cards</td></tr>
+    <tr><td><code>.badge-live</code></td><td>Amber-tinted with pulsing dot, used for live/active indicators</td></tr>
+  </table>
+
+  <h3>7.3 Product Cards (<code>.product-card</code>)</h3>
+  <ul>
+    <li>Structure: <code>.product-media</code> → <code>.product-content</code></li>
+    <li>Image uses <code>aspect-ratio: 1/1</code> with <code>object-fit: cover</code></li>
+    <li>Hover: lifts 4px, increases shadow, scales image 5%</li>
+    <li>Badge positioned absolutely at top-right</li>
+    <li>CTA button spans full width of card</li>
+  </ul>
+
+  <h3>7.4 Hero Hotspots (<code>.hotspot-btn</code>)</h3>
+  <ul>
+    <li>Absolute-positioned overlay buttons on hero image</li>
+    <li>Pulse animation ring + glowing dot</li>
+    <li>Click triggers category filter and scrolls to product card</li>
+    <li>Label tooltip appears on hover</li>
+    <li>Hidden on mobile; replaced by <code>.mobile-hotspot-pill</code> list</li>
+  </ul>
+
+  <h3>7.5 Section Headers (<code>.section-header</code>)</h3>
+  <p>Standard pattern for all content sections:</p>
+  <pre><code>&lt;div class="section-header"&gt;
+  &lt;span class="kicker"&gt;Category Label&lt;/span&gt;
+  &lt;h2 class="section-title"&gt;Section Title&lt;/h2&gt;
+  &lt;p class="section-desc"&gt;Description text.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+  <!-- ================= 8. JAVASCRIPT ================= -->
+  <h2>8. JavaScript Modules</h2>
+  <p>All JavaScript lives in <code>script.js</code> — zero dependencies, vanilla ES6+. Initialized on <code>DOMContentLoaded</code>.</p>
+  <table>
+    <tr><th>Function</th><th>Purpose</th><th>Trigger</th></tr>
+    <tr><td><code>initScrollEffects()</code></td><td>Sticky header shadow on scroll + scroll-to-top button visibility</td><td>Window scroll</td></tr>
+    <tr><td><code>initMobileMenu()</code></td><td>Mobile navigation drawer toggle, ESC to close, click outside to close</td><td>Button click</td></tr>
+    <tr><td><code>initProductCatalog()</code></td><td>Category tab filtering with fade/slide animation, keyboard nav (arrow keys)</td><td>Tab click</td></tr>
+    <tr><td><code>initHeroHotspots()</code></td><td>Hotspot buttons filter category + scroll to product; highlight pulse</td><td>Hotspot click</td></tr>
+    <tr><td><code>initStatsCounter()</code></td><td>Animated count-up when stats section enters viewport (IntersectionObserver)</td><td>Scroll into view</td></tr>
+    <tr><td><code>initFaqAccordion()</code></td><td>FAQ accordion with smooth max-height animation, single-open at a time</td><td>Question click</td></tr>
+    <tr><td><code>initScrollReveal()</code></td><td>Fade + slide-up reveal on elements with <code>.reveal</code> class</td><td>Scroll into view</td></tr>
+  </table>
+  <p><strong>Global Exposure:</strong> <code>window.janSetCategory</code> is exposed for hotspot-to-category integration.</p>
+
+  <h3>8.1 Reduced Motion Support</h3>
+  <p>All animations respect <code>@media (prefers-reduced-motion: reduce)</code>. Transitions are disabled, reveals are instant, and hover transforms are removed.</p>
+
+  <!-- ================= 9. RESPONSIVE ================= -->
+  <h2>9. Responsive Breakpoints</h2>
+  <table>
+    <tr><th>Breakpoint</th><th>Media Query</th><th>Changes</th></tr>
+    <tr><td>Mobile</td><td><code>max-width: 479px</code></td><td>Reduced container padding, smaller titles, compact CTA</td></tr>
+    <tr><td>Small Mobile</td><td><code>max-width: 640px</code></td><td>Floating WhatsApp becomes circular, scroll-top repositions, mobile dock shows</td></tr>
+    <tr><td>Mobile</td><td><code>max-width: 767px</code></td><td>Hero stacks (content→image), category tabs scroll horizontally, single-column grids, compact FAQ/CTA/footer</td></tr>
+    <tr><td>Tablet</td><td><code>640px – 1023px</code></td><td>Products grid: 2 columns</td></tr>
+    <tr><td>Desktop</td><td><code>min-width: 992px</code></td><td>Desktop nav shows, products grid: 3 columns, testimonials: 3 columns, why section: 2 columns</td></tr>
+    <tr><td>Large Desktop</td><td><code>min-width: 1024px</code></td><td>Hero: 2 columns, footer: 4 columns</td></tr>
+  </table>
+
+  <!-- ================= 10. ANIMATIONS ================= -->
+  <h2>10. Animation System</h2>
+  <table>
+    <tr><th>Animation</th><th>CSS / JS</th><th>Trigger</th></tr>
+    <tr><td>Scroll Reveal</td><td><code>.reveal</code> class + IntersectionObserver</td><td>Element enters viewport</td></tr>
+    <tr><td>Count-Up Stats</td><td><code>requestAnimationFrame</code> ease-out cubic</td><td>Stats section visible</td></tr>
+    <tr><td>Hotspot Pulse Ring</td><td><code>@keyframes hotspot-ring</code></td><td>Continuous on hero image</td></tr>
+    <tr><td>Badge Pulse Dot</td><td><code>@keyframes pulse-dot</code></td><td>Continuous on live badge</td></tr>
+    <tr><td>Hero Glare</td><td><code>@keyframes glare</code></td><td>Continuous on hero image</td></tr>
+    <tr><td>Card Highlight</td><td><code>@keyframes card-glow</code></td><td>Hotspot click triggers 3.5s</td></tr>
+    <tr><td>Mobile Drawer</td><td><code>@keyframes slideDown</code></td><td>Menu open</td></tr>
+  </table>
+
+  <!-- ================= 11. ACCESSIBILITY ================= -->
+  <h2>11. Accessibility (a11y)</h2>
+  <ul>
+    <li>Skip-to-content link (<code>.skip-link</code>) for keyboard users</li>
+    <li>Semantic HTML5: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;figure&gt;</code></li>
+    <li>ARIA labels on all interactive buttons and nav</li>
+    <li><code>aria-expanded</code> on accordion and mobile menu</li>
+    <li><code>role="tablist"</code>, <code>role="tab"</code>, <code>role="tabpanel"</code> on category tabs</li>
+    <li>Focus-visible outlines on all focusable elements</li>
+    <li>Language attributes: <code>lang="ur" dir="rtl"</code> on Urdu content</li>
+    <li>Schema.org <code>LocalBusiness</code> structured data</li>
+    <li>Open Graph meta tags for social sharing</li>
+    <li>Reduced motion media query support</li>
+    <li>Alt text on all product images</li>
+  </ul>
+
+  <!-- ================= 12. SEO ================= -->
+  <h2>12. SEO &amp; Meta</h2>
+  <ul>
+    <li>Page title: "Jan Industries | Milking Machines &amp; Genuine Spare Parts | Lahore, Pakistan"</li>
+    <li>Meta description targeting dairy farmers and spare parts buyers</li>
+    <li>Open Graph tags (title, description, image)</li>
+    <li>Theme color meta for mobile browsers</li>
+    <li>Schema.org LocalBusiness JSON-LD with address, phone, hours, price range, and offers</li>
+    <li>Canonical URL ready (add <code>&lt;link rel="canonical"&gt;</code> in head if needed)</li>
+  </ul>
+
+  <!-- ================= 13. DEPLOYMENT ================= -->
+  <h2>13. Deployment Guide</h2>
+  <div class="callout callout-info">
+    <strong>Static Site:</strong> This is a pure static site. No build step, no server, no database required.
+  </div>
+  <h3>13.1 Deployment Options</h3>
+  <ul>
+    <li><strong>GitHub Pages:</strong> Push to <code>gh-pages</code> branch or enable Pages from <code>main</code> branch</li>
+    <li><strong>Netlify / Vercel:</strong> Drag-and-drop the folder or connect Git repo</li>
+    <li><strong>Traditional Hosting:</strong> Upload via FTP/cPanel to <code>public_html</code></li>
+    <li><strong>Local Testing:</strong> Open <code>index.html</code> directly, or use <code>python -m http.server</code> / <code>npx serve</code></li>
+  </ul>
+  <h3>13.2 Pre-Deployment Checklist</h3>
+  <ul>
+    <li>Verify all image paths are correct (<code>images/</code> folder present)</li>
+    <li>Confirm <code>favicon.svg</code> exists in root</li>
+    <li>Test WhatsApp links with correct phone numbers</li>
+    <li>Update Schema.org phone numbers and address if changed</li>
+    <li>Update copyright year in footer</li>
+    <li>Run Lighthouse audit for performance/accessibility</li>
+  </ul>
+
+  <!-- ================= 14. MAINTENANCE ================= -->
+  <h2>14. Maintenance &amp; Updates</h2>
+  <h3>14.1 Adding a New Product</h3>
+  <ol>
+    <li>Add product image to <code>images/</code> folder</li>
+    <li>Copy an existing <code>&lt;article class="product-card"&gt;</code> block in <code>index.html</code></li>
+    <li>Update <code>id</code>, <code>data-category</code>, image <code>src</code>, title, specs, and WhatsApp link</li>
+    <li>Add corresponding category tab button if new category</li>
+    <li>Update "All Products (X)" count in the All tab</li>
+  </ol>
+  <h3>14.2 Changing Colors</h3>
+  <p>Edit CSS custom properties in the <code>:root</code> block at the top of <code>style.css</code>. No component-level changes needed.</p>
+  <h3>14.3 Adding a New Section</h3>
+  <ol>
+    <li>Add <code>&lt;section&gt;</code> block in <code>index.html</code> with <code>id</code> and <code>class="reveal"</code></li>
+    <li>Add styles in <code>style.css</code> following existing section patterns</li>
+    <li>Add navigation link in header and footer if needed</li>
+    <li>Add corresponding entry in <code>initScrollReveal</code> (automatic via <code>.reveal</code> class)</li>
+  </ol>
+  <h3>14.4 Image Optimization</h3>
+  <ul>
+    <li>Use JPEG for product photos, WebP preferred</li>
+    <li>Keep hero images under 200KB</li>
+    <li>Use <code>loading="lazy"</code> for below-fold images, <code>loading="eager"</code> for hero</li>
+    <li>Always include <code>width</code> and <code>height</code> attributes to prevent layout shift</li>
+  </ul>
+
+  <!-- ================= 15. BROWSER SUPPORT ================= -->
+  <h2>15. Browser Support</h2>
+  <table>
+    <tr><th>Browser</th><th>Support</th><th>Notes</th></tr>
+    <tr><td>Chrome</td><td>Full</td><td>All features supported</td></tr>
+    <tr><td>Firefox</td><td>Full</td><td>All features supported</td></tr>
+    <tr><td>Safari (iOS/macOS)</td><td>Full</td><td>Backdrop-filter supported on iOS 13+</td></tr>
+    <tr><td>Edge</td><td>Full</td><td>All features supported</td></tr>
+    <tr><td>IE11</td><td>Not Supported</td><td>CSS Grid, custom properties, and modern JS not supported</td></tr>
+  </table>
+
+  <div class="footer-note">
+    <p><strong>Jan Industries — Developer Documentation v2.0</strong></p>
+    <p>Built for GT Road, Lahore, Pakistan. Direct factory manufacturing &amp; dispatch across Pakistan.</p>
+    <p>Contact: +92 322 8482255 · WhatsApp: wa.me/923228482255</p>
+  </div>
+
+</body>
+</html>
